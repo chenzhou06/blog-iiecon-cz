@@ -31,7 +31,8 @@ PANDOC_ARGS = [
         "--smart",
         ]
 PANDOC_EXTENSIONS = [
-        "+definition_lists",
+    "+definition_lists",
+    "+footnotes",
         ]
 
 # Feed generation is usually not desired when developing
