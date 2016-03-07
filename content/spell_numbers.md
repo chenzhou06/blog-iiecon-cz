@@ -4,7 +4,7 @@ Date: 2015-11-07 22:17
 Category: Programming
 Tags: programming, racket
 
-There is a very interesting challenge in
+There is an interesting challenge in
 [Project Euler](https://projecteuler.net/problem=17), which requires
 you to spell out every number between 1 and 1000 inclusively and count
 the number of letters in their words. For example, for number `342`, the
@@ -21,10 +21,10 @@ corresponding words.
 
 ```{.scheme}
 (define ones '("zero" "one" "two" "three"
-               "four" "five" "six" "seven" "eight" "nine"))
+			   "four" "five" "six" "seven" "eight" "nine"))
 (define teens
   '("ten" "eleven" "twelve" "thirteen" "fourteen" "fifteen"
-    "sixteen" "seventeen" "eighteen" "nineteen"))
+	"sixteen" "seventeen" "eighteen" "nineteen"))
 (define tys
   '("twenty" "thirty" "forty" "fifty" "sixty" "seventy" "eighty" "ninety"))
 ```
@@ -53,14 +53,14 @@ not append a `"zero"` to their spelling.
 (define (speak-two-digits num)
   ;; num: 10~99
   (cond
-    [(or (< num 10) (> num 99)) #f]
-    [(< num 20) (list-ref teens (- num 10))]
-    [else (let ([ten-digit (quotient num 10)]
-                [one-digit (remainder num 10)])
-            (if (zero? one-digit)
-                (list-ref tys (- ten-digit 2))
-                (string-append (list-ref tys (- ten-digit 2)) " "
-                               (speak-digit one-digit))))]))
+	[(or (< num 10) (> num 99)) #f]
+	[(< num 20) (list-ref teens (- num 10))]
+	[else (let ([ten-digit (quotient num 10)]
+				[one-digit (remainder num 10)])
+			(if (zero? one-digit)
+				(list-ref tys (- ten-digit 2))
+				(string-append (list-ref tys (- ten-digit 2)) " "
+							   (speak-digit one-digit))))]))
 
 ```
 
@@ -75,8 +75,8 @@ two digits as well.
 ```{.scheme}
 (define (speak-under-two-digits num)
   (if (< num 10)
-      (speak-digit num)
-      (speak-two-digits num)))
+	  (speak-digit num)
+	  (speak-two-digits num)))
 
 
 (speak-under-two-digits 55)
@@ -88,22 +88,22 @@ challenging situation---three digits. Functions above will save a lot
 of work for us here. We can split a number with three digits into two
 parts, one part is the number at its hundred position, another is the
 rest digits which can be dealt with
-`speak-under-two-digits`. Attention! There is a pitfall when a number
+`speak-under-two-digits`. There is a pitfall when a number
 is an exact multiple of 100 which have no "rest digits" at all.
 
 ```{.scheme}
 (define (speak-three-digits num)
   ;; num: 100~999
   (cond
-    [(or (< num 100) (> num 999)) #f]
-    [else (let ([hundred-digit (quotient num 100)]
-                [last-two-digits (remainder num 100)])
-            (if (zero? last-two-digits)
-                (string-append (speak-digit hundred-digit)
-                               " hundred")
-                (string-append (speak-digit hundred-digit)
-                               " hundred and "
-                               (speak-under-two-digits last-two-digits))))]))
+	[(or (< num 100) (> num 999)) #f]
+	[else (let ([hundred-digit (quotient num 100)]
+				[last-two-digits (remainder num 100)])
+			(if (zero? last-two-digits)
+				(string-append (speak-digit hundred-digit)
+							   " hundred")
+				(string-append (speak-digit hundred-digit)
+							   " hundred and "
+							   (speak-under-two-digits last-two-digits))))]))
 
 ```
 
@@ -118,8 +118,8 @@ combining `speak-under-two-digits` and `speak-three-digits`.
 ```{.scheme}
 (define (speak-under-three-digits num)
   (if (< num 100)
-      (speak-under-two-digits num)
-      (speak-three-digits num)))
+	  (speak-under-two-digits num)
+	  (speak-three-digits num)))
 
 (speak-under-three-digits 555)
 ;; "five hundred and fifty five"
@@ -131,24 +131,24 @@ digits situation.
 ```{.scheme}
 (define (speak-four-digits num)
   (cond
-    [(or (< num 1000 ) (> num 9999)) #f]
-    [else (let ([thousand-digit (quotient num 1000)]
-                [rest-digits (remainder num 1000)])
-            (if (zero? rest-digits)
-                (string-append (speak-digit thousand-digit)
-                               " thousand")
-                (string-append (speak-digit thousand-digit)
-                               " thousand "
-                               (speak-under-three-digits rest-digits))))]))
+	[(or (< num 1000 ) (> num 9999)) #f]
+	[else (let ([thousand-digit (quotient num 1000)]
+				[rest-digits (remainder num 1000)])
+			(if (zero? rest-digits)
+				(string-append (speak-digit thousand-digit)
+							   " thousand")
+				(string-append (speak-digit thousand-digit)
+							   " thousand "
+							   (speak-under-three-digits rest-digits))))]))
 
 (define (speak-under-four-digits num)
   (if (< num 1000)
-      (speak-under-three-digits num)
-      (speak-four-digits num)))
+	  (speak-under-three-digits num)
+	  (speak-four-digits num)))
 
 ```
 
-Finally, with a very functional-styled `foldl`, I construct a function
+Finally, with a functional-styled `foldl`, I construct a function
 `count-letters` which first split a string into a list of
 words by whitespace, then count how many letters each word has, in the
 end return the sum of them.
@@ -156,8 +156,8 @@ end return the sum of them.
 ```{.scheme}
 (define (count-letters sentence)
   (foldl (λ (word acc) (+ (string-length word) acc))
-         0
-         (string-split sentence)))
+		 0
+		 (string-split sentence)))
 
 ```
 
@@ -167,8 +167,8 @@ count letters in each outcome and sum them all.
 
 ```{.scheme}
 (foldl (λ (words acc) (+ (count-letters words) acc))
-       0
-       (map speak-under-four-digits (range 1 1001))) ; 21124
+	   0
+	   (map speak-under-four-digits (range 1 1001))) ; 21124
 
 ```
 
