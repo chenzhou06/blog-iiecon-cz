@@ -5,7 +5,7 @@ Category: Economics
 
 This week we will discuss paper
 *Production, Information Costs, and Economic Organization* which is written
-by Alchian and Demsetz and very important for the study of firm.
+by Alchian and Demsetz and important for the study of firm.
 
 I think it mainly answered three questions.
 
@@ -33,7 +33,7 @@ They argued
 deceptive way of noting that the employer continually is involved in renegotiation
 of contracts on terms that must be acceptable to both parties. Telling an employee
 to type this letter rather than to file that document is like my telling a grocer
-to sell me this brand of tuna rather than that brand of bread. 
+to sell me this brand of tuna rather than that brand of bread.
 
 Alchian and Demsetz denied the propriety of the cognition that the different
 between the firm and the market is that the former operates by fiat, by authority,
@@ -99,9 +99,9 @@ What is the decisive factor dividing some parts of inputs to one, some parts to
 another.
 
 First, owner-employer must convince others he has the ability to cover all potential
-losses to pay prescribed profits. 
+losses to pay prescribed profits.
 
-> He can pay in advance or he can commit wealth sufficient to cover negative 
+> He can pay in advance or he can commit wealth sufficient to cover negative
 residuals. The latter will take the form of machines, land, buildings, or raw
 materials committed to the firm.
 
@@ -122,7 +122,7 @@ or depreciation inflicted on the input in the course of its use.
 Resources whose user cost is harder to detect when used by someone else tend to
 be owner-used. If depreciation or user cost is more cheaply detected when the
 owner can see its use than by only seeing the input before and after, there is
-force toward owner use rather than renting. 
+force toward owner use rather than renting.
 
 ## Another Reason That Firms Exist
 
