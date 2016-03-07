@@ -48,7 +48,7 @@ only useful for people who already have had exprience on programming.
 
 Even though many people think C is not necessary to become a
 programmer, I dicided to learn it. C made me a lot of trouble with its
-pointer.  To understand its usage, I read *C the pointer* beside *ANCI
+pointer. To understand its usage, I read *C the pointer* beside *ANCI
 C*. However, it's not until I've read author books about C that I
 started knowing how to use pointer. *ANCI C* is very tough for me.
 even if I typed all the code in the book, it's still very often that I
@@ -60,7 +60,7 @@ lost very soon as the book started talking about how to implement a
 database, which was Greek to me.
 
 After I felt comfortable with C, I wrote a package about matrix
-calculation.  Since then, I didn't write C any longer.
+calculation. Since then, I didn't write C any longer.
 
 I failed at learning C++ after several books, which didn't make me
 much trouble.
@@ -79,7 +79,7 @@ Not surprisingly I didn't finished SCIP. But I picked up Haskell at
 the beginning of this year. I couldn't understand recursive function
 as usual, but after I have read *Learn Haskell for a Great Good*
 twice, I went into the realm of functional programming in the end. Of
-cause, I made efforts to understand `fold`. Now I am reading
+cause, I tried to understand `fold`. Now I am reading
 *Real World Haskell* for a thorough understanding of Haskell.
 
 At this point I am interested in Scheme, because I want to hava a feeling

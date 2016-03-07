@@ -3,7 +3,7 @@ Date: 2015-05-13
 Category: Programming
 Tags: development
 
-This site is powered by [Pelican](http://docs.getpelican.com), which is a very
+This site is powered by [Pelican](http://docs.getpelican.com), which is a
 popular static site generator written in [Python](https://www.python.org).
 
 I have spent a lot of time in configuration to automate the procedure of site
@@ -41,10 +41,10 @@ in the output folder to the remote repository. Add these lines to `Makefile`:
 
 ```{.Makefile}
 gitcafe:
-    cd $(OUTPUTDIR) && git add --all && git commit -m "generate site" && git push origin gitcafe-pages
+	cd $(OUTPUTDIR) && git add --all && git commit -m "generate site" && git push origin gitcafe-pages
 ```
 `OUTPUTDIR` would have been specified already by the quickstart procedure.
-Now, you can publish your site by type `make gitcafe`!!
+Now, you can publish your site by type `make gitcafe`.
 
 For more information, you can refer to
 [Pelican's documation](http://docs.getpelican.com/en/latest/publish.html).
