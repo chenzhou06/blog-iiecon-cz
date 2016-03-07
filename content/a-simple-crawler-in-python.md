@@ -100,10 +100,10 @@ BASEURL = "http://rosettacode.org"
 INDEXURL = "http://rosettacode.org/wiki/Category:Programming_Tasks"
 
 def index(indexURL):
-    indexPage = pq(url=indexURL)
-    aElements = indexPage("div.mw-content-ltr li a")
-    baseURL = BASEURL
-    return [baseURL + i.attr.href for i in aElements.items()]
+	indexPage = pq(url=indexURL)
+	aElements = indexPage("div.mw-content-ltr li a")
+	baseURL = BASEURL
+	return [baseURL + i.attr.href for i in aElements.items()]
 
 ```
 
@@ -113,37 +113,37 @@ the same method to store a whole page to an object `page` with
 and is passed to the function `content` as an argument. The `div` where the data is
 presented can be drawn out with `page("div#mw-content-text")`. Then,
 remove the element `div.infobox` which we do not need, gather all
-content before `table#toc`, and assign the content into `task`.  The
+content before `table#toc`, and assign the content into `task`. The
 function `content` at length returns a dictionary which contains the
 title and description of that task.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~{.python}
 def content(URL):
-    page = pq(url=URL)
-    div = page("div#mw-content-text")
-    div("div.infobox").remove()
-    task = div("table#toc").prevAll()
-    title = page("h1#firstHeading").text()
-    return {"title": title, "task": task}
+	page = pq(url=URL)
+	div = page("div#mw-content-text")
+	div("div.infobox").remove()
+	task = div("table#toc").prevAll()
+	title = page("h1#firstHeading").text()
+	return {"title": title, "task": task}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once the function `content` has fetched the data, it can be passed to
 function `save` to be stored into hard disk. Here the filename must be
 carefully designed, which must not contain any illegal character. When
 opening a file to write data, the encoding must be explicitly set as
-Unicode, otherwise it would be very easy to throw an encoding error. The
+Unicode, otherwise it would be easy to throw an encoding error. The
 function `save` takes a great advantage of package `os.path` to
 handle path problem. The usage of this package can be found in the
 [Python Documentation](https://docs.python.org/3.4/library/os.path.html).
 
 ```{.python}
 def save(content):
-    filename = "".join([c for c in content["title"] if c.isalpha() or
-                        c.isdigit() or c==' ']).rstrip()
-    txtfile = os.path.join(DATAFOLD, filename + ".txt")
-    with open(txtfile, "w", encoding="utf-8") as f:
-        f.write(str(content["task"].text()))
-    return
+	filename = "".join([c for c in content["title"] if c.isalpha() or
+						c.isdigit() or c==' ']).rstrip()
+	txtfile = os.path.join(DATAFOLD, filename + ".txt")
+	with open(txtfile, "w", encoding="utf-8") as f:
+		f.write(str(content["task"].text()))
+	return
 ```
 
 Finally, combining the three functions with a `for` loop which
@@ -155,9 +155,9 @@ and address in console.
 
 ~~~~~~~~~~~~~~~~~~~~~~{.python}
 def main():
-    for url in index(INDEXURL):
-        print("[{}] try {}\n".format(datetime.datetime.now(), url))
-        save(content(url))
+	for url in index(INDEXURL):
+		print("[{}] try {}\n".format(datetime.datetime.now(), url))
+		save(content(url))
 ~~~~~~~~~~~~~~~~~~~~~~
 
 The full code can be organized as below. Some protective procedures
@@ -175,39 +175,39 @@ INDEXURL = "http://rosettacode.org/wiki/Category:Programming_Tasks"
 
 CURRENTPATH = os.getcwd()
 if not os.path.exists("data"):
-    os.mkdir("data")
+	os.mkdir("data")
 DATAFOLD = os.path.join(CURRENTPATH, "data")
 
 def index(indexURL):
-    indexPage = pq(url=indexURL)
-    aElements = indexPage("div.mw-content-ltr li a")
-    baseURL = BASEURL
-    return [baseURL + i.attr.href for i in aElements.items()]
+	indexPage = pq(url=indexURL)
+	aElements = indexPage("div.mw-content-ltr li a")
+	baseURL = BASEURL
+	return [baseURL + i.attr.href for i in aElements.items()]
 
 def content(URL):
-    page = pq(url=URL)
-    div = page("div#mw-content-text")
-    div("div.infobox").remove()
-    task = div("table#toc").prevAll()
-    title = page("h1#firstHeading").text()
-    return {"title": title, "task": task}
+	page = pq(url=URL)
+	div = page("div#mw-content-text")
+	div("div.infobox").remove()
+	task = div("table#toc").prevAll()
+	title = page("h1#firstHeading").text()
+	return {"title": title, "task": task}
 
 def save(content):
-    filename = "".join([c for c in content["title"] if c.isalpha() or
-                        c.isdigit() or c==' ']).rstrip()
-    txtfile = os.path.join(DATAFOLD, filename + ".txt")
-    with open(txtfile, "w", encoding="utf-8") as f:
-        f.write(str(content["task"].text()))
-    return
+	filename = "".join([c for c in content["title"] if c.isalpha() or
+						c.isdigit() or c==' ']).rstrip()
+	txtfile = os.path.join(DATAFOLD, filename + ".txt")
+	with open(txtfile, "w", encoding="utf-8") as f:
+		f.write(str(content["task"].text()))
+	return
 
 def main():
-    for url in index(INDEXURL):
-        print("[{}] try {}\n".format(datetime.datetime.now(), url))
-        save(content(url))
+	for url in index(INDEXURL):
+		print("[{}] try {}\n".format(datetime.datetime.now(), url))
+		save(content(url))
 
 
 if __name__ == "__main__":
-    main()
+	main()
 ~~~~~~~~~~~~~~~~~~~~~
 
 # Further Improvement
@@ -216,7 +216,7 @@ This program is of every limited usage. There are at least three
 directions to improve this crawler.
 
 * Most importantly, no anti anti-scraping method is involved in this
-  program at all, which will make this crawler very fragile when the
+  program at all, which will make this crawler fragile when the
   remote host drops the connection. A schedule might be implemented in
   the program to make it less acquisitive and keep our scraping
   action out of attention. Also, a pool of IP addresses can serve as

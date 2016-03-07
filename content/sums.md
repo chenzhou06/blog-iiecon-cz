@@ -5,8 +5,8 @@ Category: Mathematics
 Tags: math
 Status: draft
 
-Since I am pursuing my Master career, It is very natural supposing me
-very familiar with the symbol of sums $\sum$ which I am actually not.
+Since I am pursuing my Master career, It is natural supposing me
+familiar with the symbol of sums $\sum$ which I am actually not.
 
 Today, when I was reading *The Art of Computer Programming* Chapter 1,
 I finally understood some mechanism the symbol follows.
@@ -18,7 +18,7 @@ $$
 $$.
 
 Many times when I was encountered with this product of sums, I was
-just ignoring them pretending it is not important. This time I figured
+just ignoring them pretending it is trifling. This time I figured
 out that it just a sum of crossproduct of $a_i$ and $b_j$.
 
 Second, **Change of variable**:
