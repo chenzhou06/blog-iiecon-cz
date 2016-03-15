@@ -1,7 +1,7 @@
 Title: GRE Writing Issue: Technology
 Author: Chen Zhou
 Date: 2015-06-03
-Category: English
+Category: Others
 Tags: learning, English, gre
 
 ## Outline of the Example Article From ETS
@@ -17,13 +17,13 @@ Start to doubt the benefits of the technology.
 Ambiguous benefits of the technology:
 
 * Positive:
-    1. Making work more efficient.
-    2. Knitting the world together.
-    3. Some visionaries.
+	1. Making work more efficient.
+	2. Knitting the world together.
+	3. Some visionaries.
 * Negative:
-    1. Introducing spiritual crisis. We know a lot of people, but we have few
-    real friends. We can communicate more frequently than ever via the Internet,
-    but the distance between our hearts may be extended longer than before.
+	1. Introducing spiritual crisis. We know a lot of people, but we have few
+	real friends. We can communicate more frequently than ever via the Internet,
+	but the distance between our hearts may be extended longer than before.
 
 Which I believe:
 
@@ -74,4 +74,4 @@ people?
 Technologies indeed make some of our friendship shallowed, but it also provide
 opportunities for us to know people who share the same ideals with us. Technology
 might make fewer friends can walk with us till the end of life, but the joy is
-no less, even more, than the past when we are together with friends. 
+no less, even more, than the past when we are together with friends.
