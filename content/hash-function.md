@@ -3,6 +3,8 @@ Author: Chen Zhou
 Category: Programming
 Tags: programming
 Date: 2016-03-23 22:33:09
+Status: Draft
+
 <!-- TODO
 	Hash function usage.
 	Hash function for string.
