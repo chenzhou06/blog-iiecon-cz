@@ -1,7 +1,7 @@
 Title: GRE Writing Issue: Technology
 Author: Chen Zhou
 Date: 2015-06-03
-Category: Others
+Category:
 Tags: learning, English, gre
 
 ## Outline of the Example Article From ETS
