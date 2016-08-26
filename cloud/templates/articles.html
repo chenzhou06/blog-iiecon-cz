@@ -1,0 +1,76 @@
+{% if articles %}
+    {% for article in articles_page.object_list %}
+        {# First item #}
+        {% if loop.first and not articles_page.has_previous() %}
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
+                    
+                        {% include 'article_infos.html' %}
+                    <div class="entry-content">
+                        {{ article.content }}
+                    </div>
+                    
+                    {% include 'comments.html' %}
+                </article>
+            </aside><!-- /#featured -->
+            {% if loop.length > 1 %}
+                <section id="content" class="body">
+                    <hr />
+                    <p>Other Articles
+                        {% if tag %}
+                        about {{ tag }}
+                        {% endif %}
+                        {% if category %}
+                        in {{ category }}
+                        {% endif %}
+                    </p>
+                    <ol id="posts-list" class="hfeed">
+            {% endif %}
+        {# other items #}
+        {% else %}
+            {% if loop.first %}
+                <section id="content" class="body">
+                    <ol id="posts-list" class="hfeed" start="{{ articles_paginator.per_page -1 }}">
+            {% endif %}
+            <li><div class="hentry">
+
+
+                    <div class="hentry-date">
+                        <div class="hentry-date-year">
+                            {{ article.date|strftime("%Y") }}
+                        </div>
+                        <div class="hentry-date-monthday">
+                            {{ article.date|strftime("%m-%d")}}
+                        </div>
+                    </div>
+                    <div class="hentry-title">
+                        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+                           title="Permalink to {{ article.title|striptags }}">
+                           {{ article.title }}</a>
+                    </div>
+
+            </div>
+            </li>
+        {% endif %}
+        {% if loop.last %}
+            {% if loop.length > 1 or articles_page.has_other_pages() %}
+                </ol><!-- /#posts-list -->
+                <div class="pagination">
+                    {% if articles_page.has_other_pages() %}
+                    {% include 'pagination.html' %}
+                    {% endif %}
+                </div>
+                
+                </section><!-- /#content -->
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% else %}
+<section id="content" class="body">
+<h2>Pages</h2>
+    {% for page in PAGES %}
+        <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+    {% endfor %}
+</section>
+{% endif %}

@@ -19,7 +19,7 @@ DEFAULT_CATEGORY = 'Miscellany'
 DEFAULT_DATE_FORMAT = "%Y-%m-%d"
 
 # Costumized
-THEME = "cloud"
+THEME = "./cloud"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
