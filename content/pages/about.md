@@ -1,28 +1,24 @@
 Title: About
 Date: 2015-05-11
 
-welcome to my blog. This blog mainly focusses on things I am interested in.
+Welcome to my blog. This blog mainly focusses on things I am interested in:
 
-## Me
-
-I am a postgraduate student who is majoring in Economics
-but interested in programming and fascinated by Mathematics
-(though not good at it).
+* Economics which is my ideal career;
+* Mathematics by which economists describe the world;
+* Programming by which economists analyze the world.
 
 ## This Site
 
 I built this site for learning. I am a bad learner. Without writing down notes,
-I couldn't focus.
+I cannot focus.
 
-At first I decided to use *Nikola* as static pages generator. However, I failed
-to set up it correctly on my pc. *Pelican* is the only choice left for me.
+The theme used in this website is called 'cloud'. My original goal is to make it
+simple and elegant, simple as black-white, elegant as velvet sky. I
+intentionally remove any distractions in the design, keep the content
+outstanding, but at the same time try to retain details as much as possible.
 
-The theme of this site is based on 
-[cebong](https://github.com/getpelican/pelican-themes/tree/master/cebong).
-I tweaked this theme to support 
-[pandoc-reader](https://github.com/liob/pandoc_reader), including
-[mathjax](http://www.mathjax.org) for math notation and some css for code highlighting.
-
-To make this site available in China, I replaced some google services and cdn
-with mirrors in China.
-
+Some entries in this blog are much ill-formed, because those blog uses `mathjax`
+to render math expressions, and after a huge redesign, I decided not to use that
+any more. The legacy pages remain broken ever since, and I have no plan to fix
+it. Then, I keep math heavily involved entry in PDF file written by LaTeX. The
+maintenance is simplified, thus life levitated.
