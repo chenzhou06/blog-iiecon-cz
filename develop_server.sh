@@ -67,19 +67,7 @@ function start_up(){
   pelican_pid=$!
   echo $pelican_pid > $PELICAN_PID
   cd $OUTPUTDIR
-  $PY -m pelican.server $port &
-  srv_pid=$!
-  echo $srv_pid > $SRV_PID
-  cd $BASEDIR
-  sleep 1
-  if ! alive $pelican_pid ; then
-    echo "Pelican didn't start. Is the Pelican package installed?"
-    return 1
-  elif ! alive $srv_pid ; then
-    echo "The HTTP server didn't start. Is there another service using port" $port "?"
-    return 1
-  fi
-  echo 'Pelican and HTTP server processes now running in background.'
+  $PY -m pelican.server $port
 }
 
 ###
