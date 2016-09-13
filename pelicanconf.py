@@ -7,7 +7,7 @@ SITENAME = 'Chen Zhou'
 SITEURL = ''
 
 PATH = 'content'
-STATIC_PATHS = ['images', 'pdfs', 'extra/favicon.ico']
+STATIC_PATHS = ['images', 'pdfs', 'extra', "extra/favicon.ico"]
 EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'}
 }
@@ -19,7 +19,8 @@ DEFAULT_CATEGORY = 'Miscellany'
 DEFAULT_DATE_FORMAT = "%Y-%m-%d"
 
 # Costumized
-THEME = "./cloud"
+THEME = "./themes/cloud"
+READERS = {'html': None}
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

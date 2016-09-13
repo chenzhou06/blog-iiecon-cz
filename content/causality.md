@@ -3,6 +3,7 @@ Author: Chen Zhou
 Category: Economics
 Tags: econometrics
 Date: 2016-08-28 20:30:59
+Modified: 2016-08-29 10:12:42
 
 Applied econometrists nowadays pay a lot attention on causal inference. In the book
 *Causal Inference* by Imbens and Rubin (2015), the authors successfully introduce
@@ -15,9 +16,9 @@ the two states of a unit in two contradict settings. With potential outcome, we
 need not to specify which state is imaginary and which state is realized. A unit
 has two potential outcomes, one is the treated outcome, another is the
 controlled outcome. The treatment effect is defined as their difference. We need
-not to point out the unit is actually treated or not. If the unit is in the treated
-group, the treated potential outcome is observable, the controlled potential
-outcome is counterfactual. If the unit is controlled in reality, the
+not to point out the unit is actually treated or not. If the unit is in the
+treated group, the treated potential outcome is observable, the controlled
+potential outcome is counterfactual. If the unit is controlled in reality, the
 counterfactual outcome becomes the treated one. However, the expression of
 causal effect do not differ in the two cases.
 
@@ -32,4 +33,4 @@ approaches to conduct inference for causal estimand:
 * Regression methods
 * Model-based approach (Bayesian)
 
-Because this note is technical, I uploaded it [here](pdfs/causality.pdf) in PDF format.
+Because this note is technical, I uploaded it [here](pdfs/causality.pdf).
