@@ -1,0 +1,397 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Solow Swan Model</title>
+
+    <!-- <link rel="stylesheet" href="css/reveal.css"> -->
+    <link href="//cdn.bootcss.com/reveal.js/3.3.0/css/reveal.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/theme/black.css"> -->
+    <link href="//cdn.bootcss.com/reveal.js/3.3.0/css/theme/black.min.css" rel="stylesheet">
+    <!-- <script type="text/javascript" src="js/jsxgraphcore.js"></script> -->
+    <!-- <script src="//cdn.bootcss.com/jsxgraph/0.99.5/jsxgraphcore.js"></script> -->
+    <!-- Theme used for syntax highlighting of code -->
+    <!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+    <link href="//cdn.bootcss.com/reveal.js/3.3.0/lib/css/zenburn.min.css" rel="stylesheet">
+
+    <!-- Printing and PDF exports -->
+    <script>
+     var link = document.createElement( 'link' );
+     link.rel = 'stylesheet';
+     link.type = 'text/css';
+     link.href = window.location.search.match( /print-pdf/gi ) ? '//cdn.bootcss.com/reveal.js/3.3.0/css/print/pdf.min.css' : '//cdn.bootcss.com/reveal.js/3.3.0/css/print/paper.min.css';
+     document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+	<section>
+	  <h1>The Neoclassical Model of Solow and Swan</h1>
+	  <h3><i>Notes taken from Barro's Economic Growth (Chapter 1)</i></h3>
+	  <author style="display:block; font-size:80%;">Chen Zhou</author>
+	  <date style="display:block;font-size:80%;">Sep 15 2016</date>
+	</section>
+	<section>
+	  <section><h2>The Neoclassical Production Function</h2></section>
+
+	  <section><p>Constant returns to scale</p>
+	    $$F(\lambda K, \lambda L, T) =
+	    \lambda \cdot F(K, L, T)
+	    \text{ for all } \lambda > 0$$
+	  </section>
+
+	  <section>
+	    <p>Positive and diminishing returns to inputs</p>
+
+	    \begin{align}
+	    \frac{\partial F}{\partial K} > 0, & \quad \frac{\partial^2F}{\partial K^2} < 0 \\
+	    \frac{\partial F}{\partial L} > 0, & \quad \frac{\partial^2 F}{\partial L^2} < 0.
+	    \end{align}
+	  </section>
+
+	  <section>
+	    <p>Inada consitions</p>
+
+	    \begin{gather}
+	    \lim_{K \to 0} \left( \frac{\partial F}{\partial K} \right) =
+	    \lim_{L \to 0} \left( \frac{\partial F}{\partial L} \right) =
+	    \infty \\
+	    \lim_{K \to \infty} \left( \frac{\partial F}{\partial K} \right) =
+	    \lim_{L \to \infty} \left( \frac{\partial F}{\partial L} \right) =
+	    0
+	    \end{gather}
+	  </section>
+
+	  <section>
+	    <p>Essentiality</p>
+
+	    $$F(0,L) = F(K, 0) = 0$$
+	  </section>
+	</section>
+
+	<section>
+	  <section>
+	    <h2>The fundamental equation of the Solow-Swan Model</h2>
+	  </section>
+
+	  <section>
+
+	    <p>The net increase in the stock of physical capital equals
+	      gross investment less depreciation.
+	    </p>
+	    <ul>
+	      <li>Saving rate: \(s\)</li>
+	      <li>Output: \(Y = F(K,L,T)\)</li>
+	      <li>Investment: \(I = sY\)</li>
+	      <li>Depreciation: \(\delta K\)</li>
+	      <li>\(\dot{K} = I - \delta K\)</li>
+	    </ul>
+	  </section>
+
+	  <section>
+	    <p>Transform into a differential equation in terms of \(k\) </p>
+	    <p>$$k \equiv K/L$$</p>
+	    <p>$$\dot{k} = \frac{d(K/L)}{dt} = \dot{K}/L - nk$$</p>
+	    <p>$$\dot{K}/L = s \cdot f(k) - \delta k$$</p>
+	  </section>
+
+	  <section>
+	    <p>The fundamental differential equation</p>
+	    <p>$$\dot{k} = s \cdot f(k) - (n+\delta)\cdot k$$</p>
+	  </section>
+	</section>
+
+	<section>
+	  <section><h2>Markets</h2>
+	    <p>The fundamental equation of the Solow-Swan model can be derived in
+	      a framework that <strong>explicitly incorporates markets</strong></p>
+	  </section>
+
+	  <section>
+	    <p>Firms rent capital from the households</p>
+	    <ul>
+	      <li>The rental price for capital: \(R\)</li>
+	      <li>Capital stocks depreciation rate: \(\delta \ge 0\)</li>
+	      <li>The net return of capital to households: \(R - \delta\)</li>
+	      <li>Interest rate \(r = R - \delta\) </li>
+	      <li>\(R = r + \delta\)</li>
+	    </ul>
+	  </section>
+
+	  <section>
+	    <p>Firm's choice on the ratio of capital to labor</p>
+	    <p>
+	      \begin{align}
+	      \max_{k} \pi & = F(K, L, T) - (r + \delta) \cdot K - wL \\
+	      & = L \cdot [f(k) - (r + \delta) \cdot k - w]
+	      \end{align}
+	    </p>
+	    <p>Therefore</p>
+	    <p>
+	      $$ f'(k) = r + \delta $$
+	    </p>
+	  </section>
+
+	  <section>
+	    <p>Interest rate</p>
+	    <p>
+	      $$ r = f'(k) - \delta$$
+	    </p>
+	  </section>
+
+	  <section>
+	    <p>Wage rate equals the marginal product of labor</p>
+	    <p>
+	      \begin{gather}
+	      Y = L \cdot f(K/L) \\
+	      w = \partial Y / \partial L = f(k) - k \cdot f'(k)
+	      \end{gather}
+	    </p>
+	  </section>
+
+	  <section>
+	    <p>Assets per capita \(a\)</p>
+	    <p>
+	      $$a  = \text{assets} / L$$
+	    </p>
+	    <p>
+	      \begin{align}
+	      \dot{a} & = (\dot{\text{assets}} - \text{assets}\cdot \dot{L}) / L^2 \\
+	      & = (1/L) \cdot \dot{\text{assets}} - na
+	      \end{align}
+	    </p>
+	    <p>
+	      $$\dot{\text{assets}}  = [r\cdot (\text{assets}) + w\cdot L] - C$$
+	    </p>
+	    <p>
+	      $$ \dot{a}  = (r\cdot a + w) - c - na $$
+	    </p>
+	  </section>
+
+	  <section>
+	    <p>Equilibrium: assets per capita \(a\) = capital per capita \(k\)</p>
+	    <p>$$ \dot{k} = f(k) - c - (n + \delta) \cdot k $$</p>
+	    <p>$$c = (1-s) \cdot f(k) $$</p>
+	    <p>$$\dot{k} = s\cdot f(k) - (n+\delta)k$$</p>
+	  </section>
+	</section>
+
+	<section>
+	  <section>
+	    <h2>The Steady State</h2>
+	  </section>
+
+	  <section>
+	    <p>$$\dot{k}=0$$</p>
+	    <p>$$s\cdot f(k^*) = (n+\delta)\cdot k^*$$</p>
+	  </section>
+
+	  <section>
+	    <p>\(k\) is constant in the steady state</p>
+	    <p>so is \(y^* = f(k^*)\) and \(c^* = (1-s)\cdot f(k^*)\)</p>
+	  </section>
+
+	  <section>
+	    <p>The levels of variables, \(K, Y\) and \(C\),
+	      grow at the rate of population growth \(n\)</p>
+	  </section>
+	</section>
+
+	<section>
+	  <section>
+	    <h2>
+	      Golden Rule
+	    </h2>
+	    <blockquote>
+	      Do unto others as you would have others do unto you.
+	    </blockquote>
+	  </section>
+
+	  <section>
+	    <p>The steady-state level of per capita consumption</p>
+	    <p>
+	      \begin{align}
+	      c^* & = (1-s) \cdot f[k^*(s)] \\
+	      & = f[k^*(s)] - (n+\delta) \cdot k^*(s)
+	      \end{align}
+	    </p>
+	    <footnote><!-- TODO: css tweak -->
+	      \(s \cdot f(k^*) = (n+\delta) \cdot k^*\)
+	    </footnote>
+	  </section>
+
+	  <section>
+	    <p>Maximize \(c^*\) by \(k_{\text{gold}}\)</p>
+	    <p>$$ f'(k_{\text{gold}}) = n + \delta $$</p>
+	  </section>
+
+	  <section>
+	    <div id="golden-rule" class="jxgbox" style="margin: auto; width:500px; height:500px;"></div>
+	    <p>This plot is interactive<sup>*</sup>, try to drag a point!</p>
+	    <span class="footnote" style="font-size: 50%;"><sup>*</sup>Created with
+	      <a href="http://jsxgraph.uni-bayreuth.de/wp/">JSXGraph</a>. It cost me an afternoon.</span>	  </section>
+	</section>
+
+	<section>
+	  <section>
+	    <h2>Transitional Dynamics</h2>
+	  </section>
+
+	  <section>
+	    <p>The growth rate of \(k\)</p>
+	    <p>
+	      $$\gamma_k = \dot{k}/k = s \cdot f(k) / k - (n + \delta)$$
+	    </p>
+	  </section>
+
+	  <section>
+	    <div id="growth-rate" class="jxgbox" style="margin:auto;width:500px;height:500px;"></div>
+	  </section>
+
+	  <section>
+	    <p>The behavior of output along the transition</p>
+	    <p>
+	      $$\dot{y}/y = f'(k) \cdot \dot{k} / f(k)
+	      = [k \cdot f'(k) / f(k)] \cdot (\dot{k}/k)$$
+	    </p>
+	  </section>
+
+	  <section>
+	    <p>The relation between \(\dot{y}/y\) and \(\dot{k}/k\)
+	      depends on the behavior of the capital share</p>
+	    <p>
+	      $$
+	      \dot{y}/y = s \cdot f'(k) - (n + \delta) \cdot \mathrm{Sh}(k)
+	      $$
+	      where \(\mathrm{Sh}(k) \equiv k\cdot f'(k) / f(k)\)
+	    </p>
+	  </section>
+
+	  <section>
+	    <p>
+	      \begin{multline}
+	      \partial (\dot{y}/y) / \partial k =
+	      \left[ \frac{f''(k) \cdot k}{f(k)} \right]
+	      \cdot (\dot{k}/k) - \\
+	      \frac{(n+\delta)f'(k)}{f(k)} \cdot
+	      [1 - \mathrm{Sh}(k)]
+	      \end{multline}
+	    </p>
+	  </section>
+
+	  <section>
+	    <p>Consumption exhibits the same dynmics as output</p>
+	    <p>
+	      $$c = ( 1- s) \cdot y$$
+	      $$\dot{c}/c = \dot{y}/y$$
+	    </p>
+	  </section>
+	</section>
+
+	<section>
+	  <section>
+	    <h2>Behavior of Input Prices During the Transition</h2>
+	  </section>
+
+	  <section>
+	    <p>Interest rate declines monotonically toward its steady-state value</p>
+	    <p>
+	      $$r = f'(k) - \delta$$
+	      $$\partial r / \partial k = f''(k) < 0$$
+	    </p>
+	  </section>
+
+	  <section>
+	    <p>Wage rate increases monotonically as the capital stock grows</p>
+	    <p>
+	      \begin{gather}
+	      w = f(k) - k \cdot f'(k) \\
+	      \frac{\partial w}{\partial k} = f'(k) - f'(k) - k \cdot f''(k) = - k \cdot f''(k) > 0
+	      \end{gather}
+	    </p>
+	  </section>
+
+	  <section>
+	    <div id="transition" class="jxgbox" style="margin:auto;width:500px;height:500px;"></div>
+	  </section>
+	</section>
+
+	<section>
+	  <section>
+	    <h2>Policy Experiments</h2>
+	  </section>
+
+	  <section>
+	    <div id="policy-saving" class="jxgbox" style="margin:auto;width:500px;height:500px"></div>
+	    <p>The economy adjusts according to the saving rate</p>
+	  </section>
+
+	  <section>
+	    <ul>
+	      <li>a permanent increase in the saving rate generates
+		temporarily positive per capita growth rates</li>
+	      <li>the levels of \(k\) and \(y\) are permanently higher</li>
+	      <li>but the per capita growth rates return to zero</li>
+	    </ul>
+	  </section>
+
+	  <section>
+	    <p>The growth rate of population</p>
+	    <ul>
+	      <li>A decrease in \(n\) shifts the depreciation line downward</li>
+	      <li>The steady-state level of capital per worker would be larger</li>
+	      <li>The long-run growth rate of capital per person would remain at zero</li>
+	    </ul>
+	  </section>
+
+	  <section>
+	    <p>Technology</p>
+	    <ul>
+	      <li>The production function \(f(k)\) shifts upward, the saving curve shfits upward</li>
+	      <li>In the long run, the permanent improvement
+		generates higher levels of \(k\) and \(y\)</li>
+	      <li>But no changes in the per capita growth rates</li>
+	      <li>Improvements in knowledge are not bounded</li>
+	      <li>Growth must come from technological progress</li>
+	    </ul>
+	  </section>
+	</section>
+      </div>
+      <center>
+	<p style="color:grey;font-size:12px;">Press <code>ESC</code> to overview</p>
+      </center>
+    </div>
+
+    <!-- <script src="lib/js/head.min.js"></script> -->
+    <script src="//cdn.bootcss.com/reveal.js/3.3.0/lib/js/head.min.js"></script>
+    <!-- <script src="js/reveal.js"></script> -->
+    <script src="//cdn.bootcss.com/reveal.js/3.3.0/js/reveal.min.js"></script>
+
+    <script type="text/javascript">
+     Reveal.initialize({
+       history: false,
+       keyboard: true,
+       overview: true,
+       touch: true,
+       slideNumber: true,
+       math: {
+	 mathjax: '//cdn.bootcss.com/mathjax/2.7.0-beta.0/MathJax.js',
+	 config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+       },
+       dependencies: [
+	 { src: "//cdn.bootcss.com/reveal.js/3.3.0/plugin/math/math.min.js", async: true },
+	 { src: "//cdn.bootcss.com/reveal.js/3.3.0/plugin/markdown/marked.min.js" },
+	 { src: '//cdn.bootcss.com/reveal.js/3.3.0/plugin/markdown/markdown.min.js' },
+	 { src: '//cdn.bootcss.com/reveal.js/3.3.0/plugin/notes/notes.min.js', async: true },
+	 { src: '//cdn.bootcss.com/reveal.js/3.3.0/plugin/highlight/highlight.min.js',
+	   async: true, callback: function() { hljs.initHighlightingOnLoad(); }
+	 }
+       ]
+     });
+    </script>
+    <script src="bundle.js"></script>
+  </body>
+</html>
