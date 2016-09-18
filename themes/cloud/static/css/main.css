@@ -22,8 +22,14 @@ code, kbd, pre, samp {
 }
 
 pre {
-    padding-left: 2em;
+    margin-left: 2em;
 }
+
+
+blockquote {
+    font-style: italic;
+}
+
 
 /*utils*/
 .minor {
