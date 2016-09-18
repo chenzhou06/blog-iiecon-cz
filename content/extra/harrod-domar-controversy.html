@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Harrod-Domar Model Controversy</title>
+    <meta author="Chen Zhou"/>
+    <meta date="Sep 18 2016"/>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css" />
+  </head>
+  <body>
+    <div id="box" class="jxgbox" style="margin:auto;width:500px;height:500px;"></div>
+    <script src="//cdn.bootcss.com/jsxgraph/0.99.5/jsxgraphcore.js"> </script>
+    <script type="text/javascript">
+     var board = JXG.JSXGraph.initBoard(
+       "box",
+       {
+	 boundingbox: [-1, 10, 10, -1],
+	 axis: true,
+	 showCopyright: false
+       }
+     );
+
+     var controller = {
+       color: "red",
+       withLabel: true,
+       name: "drag me"
+     };
+     var majorline = {
+       strokeWidth: 2,
+       color: "black"
+     };
+     var minorline = {
+       color: "grey",
+       strockWidth: 1,
+       dash: 2
+     };
+
+
+
+
+     var pDepreciation = board.create("point", [8,4], controller)
+     var lDepreciation = board.create(
+       "perpendicularsegment",
+       [
+	 board.defaultAxes.y,
+	 pDepreciation
+       ],
+       majorline
+     );
+
+     var paraA = 10;
+     var paraB = 40;
+     var savingRateL = 0.5;
+     var savingCurveFunctionL = function(x) {
+       if (x <= (paraB / paraA) && x > 0) {
+	 return savingRateL * paraA;
+       } else if (x > 0) {
+	 return (savingRateL * paraB) / x;
+       }
+     }
+
+     /* var sliderSavingRate = board.create(
+      *   "slider",
+      *   [[6,9], [8,9], [0, 0.5, 1]],
+      *   { name: "saving rate", withLabel: true }
+      * );*/
+
+     var lSavingCurve = board.create(
+       "functiongraph",
+       [savingCurveFunctionL]
+     );
+
+     controller.name = "k";
+     var pK = board.create(
+       "glider",
+       [2, 2, board.defaultAxes.x],
+       controller
+     );
+
+     board.create(
+       "perpendicular",
+       [
+	 lDepreciation,
+	 board.create(
+	   "point",
+	   [
+	     (paraB/paraA),
+	     savingRateL * paraA
+	   ],
+	   {fixed:true, visible:false}
+	 )
+       ],
+       minorline
+     );
+
+     var lKPerp = board.create(
+       "perpendicular",
+       [lDepreciation, pK],
+       { visible: false }
+     );
+     var pKIntersec1 = board.create(
+       "intersection",
+       [lKPerp, lSavingCurve],
+       { visible: false }
+     );
+     var pKIntersec2 = board.create(
+       "intersection",
+       [lKPerp, lDepreciation],
+       { visible: false }
+     );
+
+     var growthRateIndicator = function() {
+       if (pKIntersec1.Y() > pKIntersec2.Y()) {
+	 return "growth rate > 0";
+       } else if (pKIntersec1.Y() < pKIntersec2.Y()) {
+	 return "growth rate < 0";
+       } else {
+	 return "steady state";
+       }
+     };
+
+     var textGrowthRate = board.create(
+       "text",
+       [0.2, 0.5, growthRateIndicator],
+       { anchor: pKIntersec2 }
+     );
+
+     var lGrowth = board.create(
+       "segment",
+       [pKIntersec2, pKIntersec1],
+       { firstArrow: true, lastArrow: true }
+     );
+
+     var controversyIndicator = function() {
+       if (pDepreciation.Y() > (savingRateL * paraA)) {
+	 return "Economy shrinks";
+       } else {
+	 return "Idle machinery";
+       }
+     }
+
+     board.create(
+       "text",
+       [5, 8, controversyIndicator],
+       { fontSize: 22 }
+     );
+
+     board.create(
+       "perpendicularsegment",
+       [
+	 board.defaultAxes.x,
+	 board.create(
+	   "intersection",
+	   [lDepreciation, lSavingCurve],
+	   { name: "k^*", withLabel: true, strokeWidth: 1, color: "green" }
+	 )
+       ],
+       minorline
+     );
+    </script>
+  </body>
+</html>
